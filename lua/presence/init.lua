@@ -543,7 +543,7 @@ function Presence:get_nvim_socket_paths(on_done)
             -- Use `ss` if available
             cmd = table.concat({
                 "ss -lx",
-                [[grep "nvim.*/0"]],
+                [[grep "nvim.*.0"]],
             }, "|")
 
             -- Define ss output parser
@@ -554,7 +554,7 @@ function Presence:get_nvim_socket_paths(on_done)
             -- Use `netstat` if available
             cmd = table.concat({
                 "netstat -u",
-                [[grep --color=never "nvim.*/0"]],
+                [[grep --color=never "nvim.*.0"]],
             }, "|")
 
             -- Define netstat output parser
